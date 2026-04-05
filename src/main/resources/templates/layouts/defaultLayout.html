@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet"> <!--this is needed to use css style-->
+</head>
+<body>
+
+<!-- header -->
+<div th:replace="layouts/commonHeader :: header">My header will go here</div>
+<!-- content -->
+<section layout:fragment="content">
+  <p>Replace this with a page that has layout:fragment="content"</p>
+</section>
+<!-- footer -->
+<div th:replace="layouts/commonFooter :: footer">My footer will go here</div>
+<script src="/js/bootstrap.bundle.js"></script>
+</body>
+</html>
