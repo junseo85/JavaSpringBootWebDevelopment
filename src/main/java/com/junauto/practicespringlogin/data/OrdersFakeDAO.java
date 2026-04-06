@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class OrdersFakeDAO implements OrdersDataAccessInterface{
+public class OrdersFakeDAO implements OrdersDataAccessInterface<OrderModel>{
     //lowest level(Data Access Layer)
 
     List<OrderModel> orders = new ArrayList<OrderModel>();

@@ -1,22 +1,47 @@
 package com.junauto.practicespringlogin.models;
 
-public class OrderModel {
 
-    Long id = 0L;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+
+@Entity
+@Table(name ="ORDERS")
+public class OrderEntity {
+    //OrderEntity is based on OrderModel
+    //It's purpose is to connect the OrderModel to the Orders table in the database.
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="ID")
+    Long id =0L;
+    @Column(name = "ORDER_NUMBER")
     String orderNo = "";
+    @Column(name = "PRODUCT_NAME")
     String productName = "";
+    @Column(name = "PRICE")
     float price = 0;
+    @Column(name = "QTY")
     int quantity = 0;
 
-    public OrderModel() {}
+    //we need a parameterless constructor for the mapping library we will use later.
+    public OrderEntity() {
 
-    public OrderModel(Long id, String orderNo, String productName, float price, int quantity) {
+    }
+    public OrderEntity(Long id, String orderNo, String productName, float price, int quantity) {
         this.id = id;
         this.orderNo = orderNo;
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
     }
+
+
 
     public Long getId() {
         return id;

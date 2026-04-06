@@ -3,6 +3,7 @@ package com.junauto.practicespringlogin.services;
 import com.junauto.practicespringlogin.data.OrdersDataAccessInterface;
 import com.junauto.practicespringlogin.models.OrderModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,8 @@ import java.util.List;
 public class OrderBusinessService implements OrdersBusinessServiceInterface {
 //business service level
     @Autowired
-    OrdersDataAccessInterface ordersDAO;
+        @Qualifier("ordersDataServiceForRepository")
+    OrdersDataAccessInterface<OrderModel> ordersDAO;
     @Override
     public void test() {
         System.out.println("OrderBusinessService is working");

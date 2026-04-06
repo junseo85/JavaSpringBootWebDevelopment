@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository//giving data with methods
-public class OrdersDataService implements OrdersDataAccessInterface{
+//@Repository//giving data with methods
+public class OrdersDataService implements OrdersDataAccessInterface<OrderModel>{
 
     //see application.properties file to get the detail on the mysql connection
     @Autowired
