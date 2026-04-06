@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html layout:decorate="layouts/defaultLayout" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<body>
+<div layout:fragment="content">
+    <div class="container mt-3 mb-3">
+        <form th:action="@{/orders/doUpdate}" th:object="${orderModel}" method="post">
+
+            <input type="hidden" th:field="*{id}">
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">Order Number</span>
+                <input type="text" class="form-control" th:field="*{orderNo}">
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">Product Name</span>
+                <input type="text" class="form-control" th:field="*{productName}">
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">Price</span>
+                <input type="text" class="form-control" th:field="*{price}">
+            </div>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-text">Quantity</span>
+                <input type="text" class="form-control" th:field="*{quantity}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+
+</div>
+</body>
+</html>
