@@ -123,6 +123,11 @@ public class OrdersController {
         return "ordersAdmin.html";
     }
 
+    @GetMapping("/spa")
+    public String showSPApage(Model model){
+        return "ordersSpa.html";
+    }
+
     @GetMapping("/test")
     public String test(){
         return "orders";

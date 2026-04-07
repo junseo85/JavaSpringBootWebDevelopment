@@ -56,7 +56,7 @@ public class OrdersRestController {
         return service.getById(id);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public boolean deleteOne(@PathVariable(name="id") long id){
         //deleteOne
         return service.deleteOne(id);
